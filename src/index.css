@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #030206;
+    --violet-glow: rgba(147, 51, 234, 0.35);
+    --electric-purple: #a855f7;
+    --deep-purple: #581c87;
+    --chrome-highlight: #ffffff;
+    
+    /* Typography Tokens */
+    --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-tech: 'Orbitron', monospace, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    background-color: #030206;
+    color: #f3f4f6;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030206;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a1542;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b21a8;
+  }
+}
+
+/* Typography Utility Classes */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-tech {
+  font-family: var(--font-tech);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Subtle Opacity & Metallic Gradients for Typography */
+.text-gradient-hero {
+  background: linear-gradient(175deg, #ffffff 0%, #f1f5f9 60%, rgba(203, 213, 225, 0.78) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(180deg, #ffffff 10%, #cbd5e1 75%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #f8fafc 25%, #d8b4fe 70%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tracking-ultra-tight {
+  letter-spacing: -0.055em;
+}
+
+.tracking-tech {
+  letter-spacing: 0.16em;
+}
+
+.tracking-tech-wide {
+  letter-spacing: 0.28em;
+}
+
+/* Glassmorphism and Cinematic Utilities */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(168, 85, 247, 0.15);
+}
+
+.glass-card {
+  background: rgba(18, 12, 28, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.8);
+}
+
+.glass-card:hover {
+  border-color: rgba(192, 132, 252, 0.3);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.9), 0 0 35px rgba(168, 85, 247, 0.2);
+}
+
+.glow-ambient-tl {
+  background: radial-gradient(circle at 10% 15%, rgba(139, 92, 246, 0.16) 0%, rgba(88, 28, 135, 0.06) 40%, transparent 70%);
+}
+
+.glow-ambient-br {
+  background: radial-gradient(circle at 90% 85%, rgba(168, 85, 247, 0.14) 0%, rgba(59, 7, 100, 0.05) 45%, transparent 75%);
+}
+
+.glow-intense-center {
+  background: radial-gradient(circle at 50% 50%, rgba(192, 132, 252, 0.25) 0%, rgba(126, 34, 206, 0.12) 40%, transparent 70%);
+}
+
+/* Luxury Grain Overlay */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Subtle Vignette */
+.cinematic-vignette {
+  background: radial-gradient(circle at 50% 50%, transparent 55%, rgba(3, 2, 6, 0.75) 100%);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseGlow 6s ease-in-out infinite;
+}
